@@ -134,14 +134,28 @@ import java.util.zip.GZIPOutputStream
 
 task downloadIntermediary(type: Download) {
 	group = buildMappingGroup
-	def url = "https://github.com/babric/intermediary/raw/master/mappings/${minecraft_version}.tiny"
+	def url = "https://maven.glass-launcher.net/babric/babric/intermediary-upstream/${minecraft_version}/intermediary-upstream-${minecraft_version}.jar"
 	src com.google.common.net.UrlEscapers.urlFragmentEscaper().escape(url)
-	dest new File(cacheFilesMinecraft, "${minecraft_version}-intermediary.tiny")
+	dest new File(cacheFilesMinecraft, "${minecraft_version}-intermediary.jar")
+
+	def output = new File(cacheFilesMinecraft, "${minecraft_version}-intermediary.tiny")
+	outputs.file output
+
+	doLast {
+		copy {
+			from({ zipTree(downloadIntermediary.dest) }) {
+				from "mappings/mappings.tiny"
+				rename "mappings.tiny", "../${output.name}"
+			}
+
+			into output.parentFile
+		}
+	}
 }
 
 task downloadIntermediaryV2(type: Download) {
 	group = buildMappingGroup
-	def url = "https://maven.glass-launcher.net/babric/babric/intermediary/${minecraft_version}/intermediary-${minecraft_version}-v2.jar"
+	def url = "https://maven.glass-launcher.net/babric/babric/intermediary-upstream/${minecraft_version}/intermediary-upstream-${minecraft_version}-v2.jar"
 	src com.google.common.net.UrlEscapers.urlFragmentEscaper().escape(url)
 	dest new File(cacheFilesMinecraft, "${minecraft_version}-intermediary-v2.jar")
 
