@@ -32,7 +32,7 @@ CLASS net/minecraft/class_245 net/minecraft/client/render/entity/LivingEntityRen
 	METHOD method_823 applyScale (Lnet/minecraft/class_127;F)V
 		ARG 1 entity
 		ARG 2 scale
-	METHOD method_824 getHandSwingProgress (Lnet/minecraft/class_127;FFF)V
+	METHOD method_824 applyHandSwingRotation (Lnet/minecraft/class_127;FFF)V
 		ARG 1 entity
 		ARG 2 dx
 		ARG 3 dy
