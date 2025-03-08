@@ -39,7 +39,7 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 	FIELD field_216 dimension Lnet/minecraft/class_50;
 	FIELD field_217 eventListeners Ljava/util/List;
 	FIELD field_218 chunkSource Lnet/minecraft/class_51;
-	FIELD field_219 dimensionData Lnet/minecraft/class_52;
+	FIELD field_219 storage Lnet/minecraft/class_52;
 	FIELD field_220 properties Lnet/minecraft/class_7;
 	FIELD field_221 eventProcessingEnabled Z
 	FIELD field_222 persistentStateManager Lnet/minecraft/class_53;
@@ -47,16 +47,16 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 		ARG 1 world
 		ARG 2 dimension
 	METHOD <init> (Lnet/minecraft/class_52;Ljava/lang/String;J)V
-		ARG 1 dimensionData
+		ARG 1 storage
 		ARG 2 name
 		ARG 3 seed
 	METHOD <init> (Lnet/minecraft/class_52;Ljava/lang/String;JLnet/minecraft/class_50;)V
-		ARG 1 dimensionData
+		ARG 1 storage
 		ARG 2 name
 		ARG 3 seed
 		ARG 5 dimension
 	METHOD <init> (Lnet/minecraft/class_52;Ljava/lang/String;Lnet/minecraft/class_50;J)V
-		ARG 1 dimensionData
+		ARG 1 storage
 		ARG 2 name
 		ARG 3 dimension
 		ARG 4 seed
@@ -70,6 +70,8 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 		ARG 3 y
 		ARG 5 z
 		ARG 7 sound
+		ARG 8 volume
+		ARG 9 pitch
 	METHOD method_151 getAmbientDarkness (F)I
 		ARG 1 partialTicks
 	METHOD method_152 getSpawnBlockId (II)I
@@ -248,6 +250,8 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 	METHOD method_191 playSound (Lnet/minecraft/class_57;Ljava/lang/String;FF)V
 		ARG 1 source
 		ARG 2 sound
+		ARG 3 volume
+		ARG 4 pitch
 	METHOD method_192 findPath (Lnet/minecraft/class_57;Lnet/minecraft/class_57;F)Lnet/minecraft/class_61;
 		ARG 1 entity
 		ARG 2 target
@@ -258,6 +262,8 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 	METHOD method_194 processScheduledTicks (Z)Z
 		ARG 1 flush
 	METHOD method_195 saveWithLoadingDisplay (ZLnet/minecraft/class_62;)V
+		ARG 1 saveEntities
+		ARG 2 loadingDisplay
 	METHOD method_196 allowSpawning (ZZ)V
 		ARG 1 allowMonsterSpawning
 		ARG 2 allowMobSpawning
@@ -452,6 +458,9 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 		ARG 4 blockId
 	METHOD method_254 getSeed ()J
 	METHOD method_255 getLightLevel (III)I
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_256 getTime ()J
 	METHOD method_257 isTopY (III)Z
 		ARG 1 x
@@ -463,7 +472,7 @@ CLASS net/minecraft/class_18 net/minecraft/world/World
 		ARG 1 x
 		ARG 2 y
 		ARG 3 z
-	METHOD method_261 getDimensionData ()Lnet/minecraft/class_52;
+	METHOD method_261 getWorldStorage ()Lnet/minecraft/class_52;
 	METHOD method_262 getProperties ()Lnet/minecraft/class_7;
 	METHOD method_263 canTransferPower (III)Z
 		ARG 1 x

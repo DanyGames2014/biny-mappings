@@ -49,7 +49,9 @@ CLASS net/minecraft/class_477 net/minecraft/isom/IsomPreviewCanvas
 	METHOD mouseReleased mouseReleased (Ljava/awt/event/MouseEvent;)V
 		ARG 1 mouseEvent
 	METHOD paint paint (Ljava/awt/Graphics;)V
+		ARG 1 graphics
 	METHOD run run ()V
 	METHOD update update (Ljava/awt/Graphics;)V
+		ARG 1 graphics
 	CLASS 1
 		METHOD run run ()V

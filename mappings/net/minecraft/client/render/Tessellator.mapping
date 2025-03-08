@@ -67,7 +67,7 @@ CLASS net/minecraft/class_67 net/minecraft/client/render/Tessellator
 		ARG 3 b
 		ARG 4 a
 	METHOD method_1695 startQuads ()V
-	METHOD method_1696 translate (DDD)V
+	METHOD method_1696 setOffset (DDD)V
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
