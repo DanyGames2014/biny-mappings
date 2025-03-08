@@ -25,7 +25,6 @@ CLASS net/minecraft/class_14 net/minecraft/world/BlockView
 		ARG 2 y
 		ARG 3 z
 	METHOD method_1783 isOpaque (III)Z
-		COMMENT isOpaque
 		ARG 1 x
 		ARG 2 y
 		ARG 3 z
