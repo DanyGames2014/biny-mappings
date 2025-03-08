@@ -12,6 +12,9 @@ CLASS net/minecraft/class_15 net/minecraft/block/material/Material
 	FIELD field_976 transparent Z
 	FIELD field_977 handHarvestable Z
 	FIELD field_978 pistonBehavior I
+		COMMENT 0 = Can be pushed normally
+		COMMENT 1 = Destroyed when pushed by a piston
+		COMMENT 2 = Cannot be pushed by a piston
 	FIELD field_979 AIR Lnet/minecraft/class_15;
 	FIELD field_980 SOLID_ORGANIC Lnet/minecraft/class_15;
 	FIELD field_981 SOIL Lnet/minecraft/class_15;
@@ -45,7 +48,7 @@ CLASS net/minecraft/class_15 net/minecraft/block/material/Material
 	METHOD method_900 setDestroyPistonBehavior ()Lnet/minecraft/class_15;
 	METHOD method_901 setUnpushablePistonBehavior ()Lnet/minecraft/class_15;
 	METHOD method_902 setTransparent ()Lnet/minecraft/class_15;
-	METHOD method_903 setHandHarvestable ()Lnet/minecraft/class_15;
+	METHOD method_903 setRequiresTool ()Lnet/minecraft/class_15;
 	METHOD method_904 setBurnable ()Lnet/minecraft/class_15;
 	METHOD method_905 isSolid ()Z
 	METHOD method_906 blocksVision ()Z
